@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>cars</h1>
+  <% @cars.each do |car| %>
+  <%= render 'shared/cards', car: car %>
+  <%end %>
+</div>
