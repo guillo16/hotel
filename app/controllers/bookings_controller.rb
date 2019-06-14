@@ -16,11 +16,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.car = @car
+    @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
-    else
-      redirect_to car_path(@car)
-    end
+    redirect_to bookings_path(@booking)
+  else
+    render :new
+  end
+
   end
 
 def destroy
