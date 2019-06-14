@@ -6,18 +6,20 @@ class CarsController < ApplicationController
   end
 
   def show
+
   end
+
 
   def new
     @car = Car.new
   end
 
   def create
-   @car = car.new(cars_params)
+   @car = Car.new(cars_params)
    @car.user = current_user
    if @car.save == true
      redirect_to car_path(@car)
-  else
+   else
     render :new
   end
 end
@@ -41,9 +43,10 @@ private
 
 
 def cars_params
-  params.require(:car).permit(:name, :description)
+  params.require(:car).permit(:name, :description, :photo1)
 end
 def set_cars
   @car = Car.find(params[:id])
+  @booking = Booking.new
 end
 end

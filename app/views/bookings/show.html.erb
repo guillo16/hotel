@@ -1,0 +1,7 @@
+<h1>this is booking show</h1>
+<%= @booking.start_date %>
+<%= @booking.user.email %>
+<%= @booking.car.name %>
+<img src="<%= @booking.car.photo1 %> " alt="">
+<img src="<%= @booking.car.photo2 %> " alt="">
+<%= link_to 'go back', bookings_path %>

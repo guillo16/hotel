@@ -1,10 +1,15 @@
 <h1>bookings</h1>
 
 <% @bookings.each do |booking| %>
-
+<%= link_to  booking_path(booking) do %>
 <p><%= booking.start_date %></p>
 <%= booking.end_date %>
 <p><%=booking.user.email %></p>
 <img src="<%= booking.car.photo1 %>">
 <% end %>
+
+
+<% end %>
+
+
 

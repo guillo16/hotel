@@ -3,10 +3,11 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.order(start_date: :desc)
+
   end
 
   def show
-   @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -15,25 +16,28 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    if @booking.save == true
-      redirect_to booking_path(@booking)
+    @booking.car = @car
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path(@booking)
     else
-      render :new
-    end
+      redirect_to car_path(@car)
+      flash[:alert] = "error chose good your dates"
+  end
 
   end
 
-  def destroy
-  end
+def destroy
+end
 
-  private
+private
 
-  def set_cars
-    @car = Car.find(params[:car_id])
-  end
+def set_cars
+  @car = Car.find(params[:car_id])
+end
 
-  def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
-  end
+def booking_params
+  params.require(:booking).permit(:start_date, :end_date)
+end
 
 end
