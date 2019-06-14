@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.order(start_date: :desc)
+
   end
 
   def show
@@ -18,9 +19,10 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
-    redirect_to bookings_path(@booking)
-  else
-    render :new
+      redirect_to bookings_path(@booking)
+    else
+      redirect_to car_path(@car)
+      flash[:alert] = "error chose good your dates"
   end
 
   end
