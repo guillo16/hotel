@@ -6,7 +6,9 @@ class CarsController < ApplicationController
   end
 
   def show
+
   end
+
 
   def new
     @car = Car.new
@@ -17,7 +19,7 @@ class CarsController < ApplicationController
    @car.user = current_user
    if @car.save == true
      redirect_to car_path(@car)
-  else
+   else
     render :new
   end
 end
@@ -45,5 +47,6 @@ def cars_params
 end
 def set_cars
   @car = Car.find(params[:id])
+  @booking = Booking.new
 end
 end

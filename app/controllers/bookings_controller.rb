@@ -10,11 +10,14 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+
+     @booking = Booking.new
+
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.car = @car
     if @booking.save == true
       redirect_to booking_path(@booking)
     else
