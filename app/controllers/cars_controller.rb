@@ -35,6 +35,7 @@ end
 
 def destroy
   @car.destroy
+  @car.user = current_user
   redirect_to cars_path
   flash[:notice] = "Your Car has been removed."
 end
