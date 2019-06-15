@@ -7,3 +7,9 @@
 </div>
 
 <%= render 'booking_form' %>
+
+  <%= link_to car_path(@car), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <div class="button-delete">
+    Delete car
+  </div>
+  <% end %>

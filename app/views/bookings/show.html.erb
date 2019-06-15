@@ -5,3 +5,10 @@
 <img src="<%= @booking.car.photo1 %> " alt="">
 <img src="<%= @booking.car.photo2 %> " alt="">
 <%= link_to 'go back', bookings_path %>
+
+
+<%= link_to booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <div class="button-delete">
+    Delete booking
+  </div>
+  <% end %>
