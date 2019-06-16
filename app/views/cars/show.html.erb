@@ -6,6 +6,9 @@
   <%= @car.user.email %>
 </div>
 
+<% if @car.user == current_user %>
+<%else  %>
 <%= render 'booking_form' %>
+<%end  %>
 
 
