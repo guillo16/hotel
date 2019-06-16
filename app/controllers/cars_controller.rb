@@ -8,7 +8,6 @@ class CarsController < ApplicationController
   end
 
   def show
-
   end
 
 
@@ -38,9 +37,10 @@ class CarsController < ApplicationController
 
   def destroy
     @car.destroy
-    @car.user = current_user
+
     redirect_to cars_path
     flash[:notice] = "Your Car has been removed."
+    authorize @car
   end
 
   private
@@ -50,8 +50,10 @@ class CarsController < ApplicationController
   end
 
   def set_cars
+
     @car = Car.find(params[:id])
-    authorize @car
+     authorize @car
     @booking = Booking.new
+
   end
 end
