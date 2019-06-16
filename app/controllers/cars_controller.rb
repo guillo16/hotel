@@ -10,7 +10,6 @@ class CarsController < ApplicationController
   def show
   end
 
-
   def new
     @car = Car.new
     authorize @car
@@ -50,10 +49,8 @@ class CarsController < ApplicationController
   end
 
   def set_cars
-
     @car = Car.find(params[:id])
-     authorize @car
+    authorize @car
     @booking = Booking.new
-
   end
 end
