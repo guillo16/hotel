@@ -4,13 +4,13 @@
     <p>The best webpage to rent the car of your dream</p>
   </div>
 </div>
-
-<div class="car-container">
-  <h1>cars</h1>
-  <% @cars.each do |car| %>
-  <%= render 'shared/cards', car: car %>
-  <%end %>
-
+<div class="cars-wrapper">
+  <h1> Luxury Cars All over the world</h1>
+  <div class="cars-container">
+    <% @cars.each do |car| %>
+    <%= render 'shared/cards', car: car %>
+    <%end %>
+  </div>
 </div>
 <%= link_to 'your bookings', bookings_path %>
 
