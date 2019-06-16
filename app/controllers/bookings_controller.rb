@@ -18,16 +18,15 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.car = @car
-
+    @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to bookings_path(@booking)
 
     else
       redirect_to car_path(@car)
       flash[:alert] = "error chose good your dates"
-      authorize @booking
     end
-    authorize @booking
   end
 
   def destroy
