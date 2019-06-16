@@ -2,5 +2,9 @@
   <%= link_to car_path(car) do %>
   <h1><%= car.name %></h1>
   <img src="<%= car.photo1 %> " alt="">
+    <% if policy(car).destroy?  %>
+  <%= link_to 'destroy', car, method: :delete, data: { confirm: "Are you sure?" }  %>
+  <%else  %>
+  <%end  %>
   <% end %>
 </div>
