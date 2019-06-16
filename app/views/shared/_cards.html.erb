@@ -1,10 +1,22 @@
 <div class="cards-container">
   <%= link_to car_path(car) do %>
-  <h1><%= car.name %></h1>
   <img src="<%= car.photo1 %> " alt="">
-    <% if policy(car).destroy?  %>
-  <%= link_to 'destroy', car, method: :delete, data: { confirm: "Are you sure?" }  %>
-  <%else  %>
-  <%end  %>
+  <h2>LUXURY CAR - PARIS</h2>
+  <h3><%= car.name %></h3>
+  <p>$89/day</p>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star">- 200 reviews</i>
+
   <% end %>
+  <div class="car-delete">
+    <% if policy(car).destroy?  %>
+    <%= link_to car, method: :delete, data: { confirm: "Are you sure?" } do %>
+    <p><i class="fas fa-trash-alt"></i></p>
+    <%end  %>
+    <%else  %>
+    <%end  %>
+  </div>
 </div>
