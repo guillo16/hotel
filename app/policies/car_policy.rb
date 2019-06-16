@@ -4,4 +4,14 @@ class CarPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+    return true
+  end
+
+  def update?
+    record.user == user
+  end
+
+
 end
