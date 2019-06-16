@@ -2,28 +2,32 @@ class BookingsController < ApplicationController
   before_action :set_cars, only: [:new, :create]
 
   def index
-    @bookings = Booking.order(start_date: :desc)
-
+    @bookings = policy_scope(Booking).order(start_date: :desc)
   end
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.car = @car
-    @booking.user = current_user
+
     if @booking.save
       redirect_to bookings_path(@booking)
+
     else
       redirect_to car_path(@car)
       flash[:alert] = "error chose good your dates"
+      authorize @booking
     end
+    authorize @booking
   end
 
   def destroy
@@ -31,6 +35,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path
     flash[:notice] = "Your Booking has been removed."
+    authorize @booking
   end
 
  private
