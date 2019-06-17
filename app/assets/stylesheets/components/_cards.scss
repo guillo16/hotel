@@ -13,7 +13,7 @@
     margin-bottom: 2px;
   }
   img {
-    width: 313px;
+    width: 100%;
     height: 200px;
   }
 
@@ -34,5 +34,39 @@
   i {
     font-size: 20px;
     color: black;
+  }
+}
+
+
+@media (min-width: 100px) and (max-width: 648px) {
+  .cards-container {
+    img {
+      width: 100%;
+      height: 180px;
+    }
+    h2 {
+    color: grey;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 2px;
+  }
+
+  p {
+    margin-top: 0px;
+    color: grey;
+    font-size: 13px;
+    margin-bottom: 0px;
+  }
+
+  i {
+    font-size: 10px;
+    color: green;
+  }
   }
 }
