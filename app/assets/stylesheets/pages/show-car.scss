@@ -40,6 +40,7 @@ h3 {
 
 .car-booking {
   flex: 0 0 400px;
+  padding: 10px;
 }
 
 
@@ -54,4 +55,8 @@ h3 {
 
 }
 
-
+@media (min-width: 649px) and (max-width: 1023px) {
+  .car-content-wrapper {
+    display: block;
+  }
+}

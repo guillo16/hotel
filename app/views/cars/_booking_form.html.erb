@@ -1,8 +1,11 @@
-<div class="container">
+<div class="booking-container">
+ <div class="form-group">
+  <h2>BOOKING</h2>
   <%= simple_form_for [@car, @booking] do |f| %>
-  <%= f.input :start_date, as: :string, input_html: { id: "range_start"} %>
-  <%= f.input :end_date, as: :string, input_html: { id: "range_end"} %>
+  <%= f.input :start_date, label: "START DATE", placeholder: "START DATE", as: :string, input_html: { id: "range_start"} %>
+  <%= f.input :end_date, label: "END DATE", placeholder: "END DATE", as: :string, input_html: { id: "range_end"} %>
 
-  <%= f.submit "crealo ahora" %>
+  <%= f.button :submit, "BOOK NOW", class: "booking-button" %>
   <% end %>
+</div>
 </div>
