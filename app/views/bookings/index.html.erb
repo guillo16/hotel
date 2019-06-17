@@ -1,14 +1,27 @@
-<h1>bookings</h1>
+<div class="booking-wrapper">
+  <h1>My bookings</h1>
+  <% @bookings.each do |booking| %>
+  <%= link_to  booking_path(booking) do %>
+  <div class="booking">
+    <div class="booking-img">
+      <img src="<%= booking.car.photo1 %>">
+    </div>
+    <div class="booking-content">
+      <p><%=booking.user.email %></p>
+      <h2>Start Date: <%= booking.start_date %></h2>
+      <h2>End Date: <%= booking.end_date %></h2>
+      <p>Owner: <%=booking.car.user.email %></p>
+  <% if policy(booking).destroy?  %>
+    <%= link_to booking, method: :delete, data: { confirm: "Are you sure?" } do %>
+    <p> Cancel booking <i class="fas fa-trash-alt"></i></p>
+    <%end  %>
+    <%else  %>
+    <%end  %>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
 
-<% @bookings.each do |booking| %>
-<%= link_to  booking_path(booking) do %>
-<p><%= booking.start_date %></p>
-<%= booking.end_date %>
-<p><%=booking.user.email %></p>
-<p><%=booking.car.user.email %></p>
-<img src="<%= booking.car.photo1 %>">
-<% end %>
-<% end %>
 
-
-<%= link_to 'go back', cars_path %>
+  <%= link_to 'go back', cars_path %>
+</div>
