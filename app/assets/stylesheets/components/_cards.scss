@@ -1,20 +1,31 @@
 .cards-container {
+  a {
+    text-decoration: none;
 
+  }
   h2 {
     color: grey;
     font-size: 15px;
     font-weight: bold;
     margin-top: 8px;
+    &:hover {
+      color: black;
+    }
   }
 
   h3 {
     font-size: 20px;
     color: black;
     margin-bottom: 2px;
+    &:hover {
+      color: grey;
+    }
   }
   img {
     width: 100%;
     height: 200px;
+    border-radius: 6px;
+
   }
 
   p {
@@ -45,28 +56,28 @@
       height: 180px;
     }
     h2 {
-    color: grey;
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 8px;
-  }
+      color: grey;
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
 
-  h3 {
-    font-size: 18px;
-    color: black;
-    margin-bottom: 2px;
-  }
+    h3 {
+      font-size: 18px;
+      color: black;
+      margin-bottom: 2px;
+    }
 
-  p {
-    margin-top: 0px;
-    color: grey;
-    font-size: 13px;
-    margin-bottom: 0px;
-  }
+    p {
+      margin-top: 0px;
+      color: grey;
+      font-size: 13px;
+      margin-bottom: 0px;
+    }
 
-  i {
-    font-size: 10px;
-    color: green;
-  }
+    i {
+      font-size: 10px;
+      color: green;
+    }
   }
 }

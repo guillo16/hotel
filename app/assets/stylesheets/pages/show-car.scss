@@ -1,17 +1,17 @@
 // images section
 .car-container {
   width: 100%;
-}
-
-.img-column {
-  float: left;
-  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   img {
     width: 100%;
-    margin-bottom: 0px;
+    height: 350px;
+
   }
 }
+
+
 
 // text section
 .car-content-wrapper {
@@ -40,6 +40,7 @@ h3 {
 
 .car-booking {
   flex: 0 0 400px;
+  padding: 10px;
 }
 
 
@@ -47,10 +48,15 @@ h3 {
   .car-content-wrapper {
     display: block;
   }
-  .img-column {
+  .car-container {
     display: block;
-    width: 100%;
-  }
+
 }
 
+}
 
+@media (min-width: 649px) and (max-width: 1023px) {
+  .car-content-wrapper {
+    display: block;
+  }
+}
