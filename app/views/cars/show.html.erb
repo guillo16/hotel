@@ -1,14 +1,23 @@
 <div class="car-container">
-  <%= @car.name %>
   <img src="<%= @car.photo1 %> " alt="">
-  <p><%= @car.description %></p>
   <img src="<%= @car.photo2 %> " alt="">
-  <%= @car.user.email %>
+  <img src="<%= @car.photo3 %> " alt="">
+  <img src="<%= @car.photo4 %> " alt="">
+</div>
+<div class="car-content-wrapper">
+  <div class="car-description">
+    <h2><%= @car.name %></h2>
+    <h3>Paris - France <%= @car.user.email %></h3>
+    <p><%= @car.description %> </p>
+  </div>
+  <div class="car-booking">
+    <% if @car.user == current_user %>
+    <%else  %>
+    <%= render 'booking_form' %>
+    <%end  %>
+  </div>
 </div>
 
-<% if @car.user == current_user %>
-<%else  %>
-<%= render 'booking_form' %>
-<%end  %>
+
 
 
