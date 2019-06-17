@@ -1,8 +1,12 @@
 <div class="car-container">
-  <img src="<%= @car.photo1 %> " alt="">
-  <img src="<%= @car.photo2 %> " alt="">
-  <img src="<%= @car.photo3 %> " alt="">
-  <img src="<%= @car.photo4 %> " alt="">
+  <div class="img-column">
+    <img src="<%= @car.photo1 %> " alt="">
+    <img src="<%= @car.photo2 %> " alt="">
+  </div>
+  <div class="img-column">
+    <img src="<%= @car.photo3 %> " alt="">
+    <img src="<%= @car.photo4 %> " alt="">
+  </div>
 </div>
 <div class="car-content-wrapper">
   <div class="car-description">
