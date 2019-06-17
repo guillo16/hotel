@@ -1,9 +1,16 @@
-<div class="container">
-  <h1>cars</h1>
-  <% @cars.each do |car| %>
-  <%= render 'shared/cards', car: car %>
-  <%end %>
-
+<div class="banner-1" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1530940031329-f884cdcf65c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjIxMTIzfQ&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container">
+    <h1>Rent Car</h1>
+    <p>The best webpage to rent the car of your dream</p>
+  </div>
+</div>
+<div class="cars-wrapper">
+  <h1> Luxury Cars All over the world</h1>
+  <div class="cars-container">
+    <% @cars.each do |car| %>
+    <%= render 'shared/cards', car: car %>
+    <%end %>
+  </div>
 </div>
 <%= link_to 'your bookings', bookings_path %>
 

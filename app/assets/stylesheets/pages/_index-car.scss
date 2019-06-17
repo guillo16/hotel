@@ -1,0 +1,17 @@
+.cars-wrapper {
+  width: 90%;
+  margin: 0 auto;
+
+  h1 {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 30px;
+  }
+}
+.cars-container {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+
+}
