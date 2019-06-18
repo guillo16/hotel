@@ -17,7 +17,11 @@
     <%end  %>
   </div>
 </div>
-
-
-
+<div class="container">
+ <% if policy(@car).destroy?  %>
+ <button id="sweet-alert-demo" class="button-delete">Delete car</button>
+ <%= link_to "", car_path(@car), method: :delete, id: "delete-link", class: "hidden" %>
+ <%else  %>
+ <%end %>
+</div>
 
