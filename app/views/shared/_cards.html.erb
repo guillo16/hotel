@@ -13,10 +13,13 @@
   <% end %>
   <div class="car-delete">
     <% if policy(car).destroy?  %>
-    <%= link_to car, method: :delete, data: { confirm: "Are you sure?" } do %>
+    <%= link_to car, method: :delete, id:"sweet-alert-demo", data: { confirm: "Are you sure?" } do %>
     <p><i class="fas fa-trash-alt"></i></p>
     <%end  %>
     <%else  %>
     <%end  %>
   </div>
 </div>
+
+
+
