@@ -30,6 +30,7 @@
 </h2>
 
 <div id="reviews">
+  <%= render 'reviews/form', car: @car, review: @review %>
   <% if @car.reviews.blank? %>
     Be the first to leave a review for <%= @car.name %>
   <% else %>
