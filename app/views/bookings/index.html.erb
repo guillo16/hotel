@@ -10,6 +10,8 @@
       <p><%=booking.user.email %></p>
       <h2>Start Date: <%= booking.start_date %></h2>
       <h2>End Date: <%= booking.end_date %></h2>
+      <% total_cost = (booking.car.price * (booking.end_date - booking.start_date)).to_i %>
+      <h2>Total cost: $<%= number_with_delimiter(total_cost, :delimiter => ',') %></h2>
       <p>Owner: <%=booking.car.user.email %></p>
   <% if policy(booking).destroy?  %>
     <%= link_to booking, method: :delete, data: { confirm: "Are you sure?" } do %>
